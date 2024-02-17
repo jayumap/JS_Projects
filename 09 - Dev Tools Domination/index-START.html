@@ -7,22 +7,39 @@
 </head>
 <body>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  <p onClick="toggleStyles()">Small me</p>
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
-    function makeGreen() {
+    let greenMode = false;
+
+    function toggleStyles() {
       const p = document.querySelector('p');
-      p.style.color = '#BADA55';
-      p.style.fontSize = '50px';
+      if (greenMode) {
+        p.style.color = '';
+        p.style.fontSize = '';
+        p.innerHTML = 'Small Me';
+        // console.log(`normal`);
+        
+      } else {
+        p.style.color = '#BADA55';
+        p.style.fontSize = '50px';
+        p.innerHTML = 'Big Me';
+        
+      }
+      greenMode = !greenMode;
     }
 
     // Regular
-
+    console.log(`hello world`);
+    
     // Interpolated
-
+    console.log(`hello im a %s string`, '*');
+    
     // Styled
+    console.log(`%c Hello World`, `font-size: 45px; background:yellow; color:black; padding:20px; margin:20px;`);
+    
 
     // warning!
 
